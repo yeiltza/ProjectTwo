@@ -35,4 +35,4 @@ jobs:
     - name: Build the docker image
       run: docker build . --file Dockerfile --tag jbdiop/webrtc-app:$(date +%s)
     - name: Push image to dockerhub
-      run: docker push ${{secrets.DOCKER_USER}}/webrtc-app
+      run: docker push {{env.DOCKER_USER}}/webrtc-app
