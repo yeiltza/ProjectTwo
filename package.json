@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
+    "cypress": "node_modules/.bin/cypress open",
     "test": "jest --watch",
     "lint": "eslint --fix public/"
   },
