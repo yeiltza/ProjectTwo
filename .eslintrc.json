@@ -1,15 +1,17 @@
 {
     "settings": {
-      "_version": "Stolley Browser Config, v. 3.0.1, 20210503",
+      "_version": "Stolley Modified Lint v.Jeebe",
       "_eslint_version": "7.21.0",
       "_rules_url": "https://eslint.org/docs/rules/",
       "_repo_url": "https://github.com/karlstolley/eslint-config"
     },
     "parserOptions": {
-      "ecmaVersion": 5
+      "ecmaVersion": 2017
     },
     "env": {
-      "browser": true
+      "browser": true,
+      "es6": true,
+      "jest": true
     },
     "extends": "eslint:recommended",
     "rules": {
@@ -17,12 +19,13 @@
       "brace-style": ["warn", "1tbs"],
       "comma-dangle": ["warn", "never"],
       "comma-spacing": ["warn", { "before": false, "after": true }],
-      "curly": ["warn", "all"],
+      "curly": ["warn", "multi"],
       "dot-location": ["warn", "property"],
       "dot-notation": "warn",
       "eqeqeq": ["warn", "always"],
       "func-call-spacing": "warn",
       "indent": ["warn", 2],
+      "ignorePatterns": [ "off", "*.test.js"],
       "linebreak-style": ["error", "unix"],
       "multiline-comment-style": ["warn", "separate-lines"],
       "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
@@ -39,5 +42,6 @@
       "strict": ["error", "global"],
       "vars-on-top": "error",
       "yoda": "error"
-    }
+    },
+    "plugins": ["testing-library"]
   }
