@@ -25,7 +25,6 @@
       "eqeqeq": ["warn", "always"],
       "func-call-spacing": "warn",
       "indent": ["warn", 2],
-      "ignorePatterns": [ "off", "*.test.js"],
       "linebreak-style": ["error", "unix"],
       "multiline-comment-style": ["warn", "separate-lines"],
       "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
@@ -43,5 +42,6 @@
       "vars-on-top": "error",
       "yoda": "error"
     },
-    "plugins": ["testing-library"]
+    "plugins": ["testing-library"],
+    "ignorePatterns": ["*.test.js", "*.spec.js"]
   }

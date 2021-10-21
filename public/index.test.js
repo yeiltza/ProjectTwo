@@ -1,4 +1,4 @@
-const {screen, getByText, fireEvent} = require('@testing-library/dom');
+const {getByText} = require('@testing-library/dom');
 const { JSDOM } = require('jsdom');
 const fs = require('fs');
 const path = require('path');
