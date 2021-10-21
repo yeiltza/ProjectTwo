@@ -1,16 +1,14 @@
 name: WebRTC Nodejs CI
-
 on: ["push", pull_request]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 17.x]
-
+        node-version: [16.x, 17.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -27,13 +25,8 @@ jobs:
     - name: Test the application
       run: npm run test:ci
     - name: Login to docker
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: echo $DOCKER_PASSWORD | docker login --username $DOCKER_USER --password-stdin
+      run: echo ${{env.DOCKER_PASSWORD}} | docker login --username ${{env.DOCKER_USER}} --password-stdin
     - name: Build the docker image
       run: docker build . --file Dockerfile --tag jbdiop/webrtc-app:$(date +%s)
     - name: Push image to dockerhub
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-      run: docker push $DOCKER_USER/webrtc-app
+      run: docker push jbdiop/webrtc-app
