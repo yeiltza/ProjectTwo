@@ -7,6 +7,7 @@
     "dev": "nodemon ./bin/www",
     "cypress": "node_modules/.bin/cypress open",
     "test": "jest --watch",
+    "test:ci": "jest --ci",
     "lint": "eslint --fix public/"
   },
   "dependencies": {
