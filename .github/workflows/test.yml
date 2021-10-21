@@ -27,6 +27,6 @@ jobs:
     - name: Login to docker
       run: echo ${{env.DOCKER_PASSWORD}} | docker login --username ${{env.DOCKER_USER}} --password-stdin
     - name: Build the docker image
-      run: docker build . --file Dockerfile --tag jbdiop/webrtc-app:$(date +%s)
+      run: docker build . --file Dockerfile --tag jbdiop/webrtc-app:$(date +%s) --tag jbdiop/webrtc-app:latest
     - name: Push image to dockerhub
       run: docker push jbdiop/webrtc-app
