@@ -18,7 +18,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm run lint
-    - run: npm run test:ci
+    - name: Continous integration with npm to extract packages
+      run: npm ci
+    - name: Build the node application
+      run: npm run build --if-present
+    - name: Lint the application with eslint script
+      run: npm run lint
+    - name: Test the application
+      run: npm run test:ci
+    - name: Login to docker
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Build the docker image
+      run: docker build . --file Dockerfile --tag jbdiop/webrtc-app:$(date +%s)
+    - name: Push image to dockerhub
+      run: docker push ${{secrets.DOCKER_USER}}webrtc-app
