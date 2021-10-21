@@ -30,9 +30,10 @@ jobs:
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-        echo {{env.DOCKER_PASSWORD}} | docker login --username {{env.DOCKER_USER}} --password-stdin
+      run: echo $DOCKER_PASSWORD | docker login --username $DOCKER_USER --password-stdin
     - name: Build the docker image
       run: docker build . --file Dockerfile --tag jbdiop/webrtc-app:$(date +%s)
     - name: Push image to dockerhub
-      run: docker push jbdiop/webrtc-app
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+      run: docker push $DOCKER_USER/webrtc-app
