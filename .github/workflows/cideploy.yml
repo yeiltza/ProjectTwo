@@ -43,12 +43,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Upload application to S3 bucket
-        run: aws s3 cp deploy_package.zip s3://jbdiop-ci-deploy/app/
+        run: aws s3 cp deploy_package-${{ github.sha }}.zip s3://jbdiop-ci-deploy/app/
       - name: Create new ElasticBeanstalk Application Version
         run: |
           aws elasticbeanstalk create-application-version \
           --application-name webrtc-app \
-          --source-bundle S3Bucket="jbdiop-ci-deploy",S3Key="app/deploy_package.zip" \
+          --source-bundle S3Bucket="jbdiop-ci-deploy",S3Key="app/deploy_package-${{ github.sha }}.zip" \
           --version-label "ver-${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}"
       - name: Deploy new ElasticBeanstalk Application Version
