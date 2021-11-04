@@ -1,0 +1,12 @@
+{
+    "AWSEBDockerrunVersion": 3,
+    "containerDefinitions": [
+        {
+            "name": "webrtc-app",
+            "image": "jbdiop/webrtc-app",
+            "hostname": "webrtc-app",
+            "essential": true,
+            "memory": 128
+        }
+    ]
+}
