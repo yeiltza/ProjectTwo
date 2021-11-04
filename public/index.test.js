@@ -14,4 +14,8 @@ describe("index html test", () => {
     dom = new JSDOM(html, { runScripts: "dangerously" });
     container = dom.window.document.body;
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 0689ea61697c26838d2e7374bd2c2f00e52d6def
