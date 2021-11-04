@@ -13,7 +13,7 @@ deploy:
   region: "us-east-2"
   app: "webrtc-app"
   env: "Webrtcapp-env"
-  bucket_name: "elasticbeanstalk-us-east-2-070674816621Info"
+  bucket_name: "elasticbeanstalk-us-east-2-070674816621"
   bucket_path: "webrtc-app"
   on:
     branch: main
