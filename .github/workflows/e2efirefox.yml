@@ -1,17 +1,17 @@
-name: End-to-end test on Firefox
-on: [push, pull_request]
-jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Run Cypress tests on Firefox
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build --if-present
-          start: npm start
-          browser: firefox
-          headless: true
+# name: End-to-end test on Firefox
+# on: [push, pull_request]
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-20.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       # Install NPM dependencies, cache them correctly
+#       # and run all Cypress tests
+#       - name: Run Cypress tests on Firefox
+#         uses: cypress-io/github-action@v2
+#         with:
+#           build: npm run build --if-present
+#           start: npm start
+#           browser: firefox
+#           headless: true
