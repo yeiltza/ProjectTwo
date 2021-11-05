@@ -6,5 +6,6 @@ const spotifyRouter = express.Router();
 spotifyRouter.get("/login", spotifyController.loginSpotify);
 spotifyRouter.get("/auth", spotifyController.authSpotify);
 spotifyRouter.get("/callback", spotifyController.getCallback);
+spotifyRouter.get("/refresh_token", spotifyController.refreshToken);
 
 module.exports = spotifyRouter;
