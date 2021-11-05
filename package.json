@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "jest": {
-    "testPathIgnorePatterns": ["/cypress/"]
+    "testPathIgnorePatterns": [
+      "/cypress/"
+    ]
   },
   "scripts": {
     "start": "node ./bin/www",
@@ -14,6 +16,7 @@
     "lint": "eslint --fix public/"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
