@@ -3,16 +3,16 @@
 /**
  * Module dependencies.
  */
-
+const dotenv = require("dotenv");
 const { readFileSync } = require("fs");
-const { app, io } = require("../app");
+const { app, io } = require("../app.js");
 const debug = require("debug")("projecttwo:server");
 const https = require("https");
 
 /**
  * Get port from environment and store in Express.
  */
-
+dotenv.config();
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
