@@ -15,4 +15,4 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/spotify", spotifyRouter);
 
-module.exports = app;
+module.exports = { app };
