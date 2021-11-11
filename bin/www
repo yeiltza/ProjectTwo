@@ -4,10 +4,9 @@
  * Module dependencies.
  */
 
-const { readFileSync } = require("fs");
 const { app, io } = require("../app");
 const debug = require("debug")("projecttwo:server");
-const https = require("https");
+const http = require("http");
 
 /**
  * Get port from environment and store in Express.
@@ -17,26 +16,17 @@ const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
 /**
- * Load in SSL Keys and Certs
- */
-const { LOCALHOST_SSL_KEY, LOCALHOST_SSL_CERT } = process.env;
-const config = {
-  key: readFileSync(LOCALHOST_SSL_KEY),
-  cert: readFileSync(LOCALHOST_SSL_CERT),
-};
-
-/**
- * Create HTTPS server.
+ * Create HTTP server.
  */
 
-const server = https.createServer(config, app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
 server.listen(port, () => {
-  console.log(`Listening on https://localhost:${port}`);
+  console.log(`Listening on http://localhost:${port}`);
 });
 server.on("error", onError);
 server.on("listening", onListening);
@@ -62,7 +52,7 @@ function normalizePort(val) {
 }
 
 /**
- * Event listener for HTTPS server "error" event.
+ * Event listener for HTTP server "error" event.
  */
 
 function onError(error) {
@@ -88,7 +78,7 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTPS server "listening" event.
+ * Event listener for HTTP server "listening" event.
  */
 
 function onListening() {
