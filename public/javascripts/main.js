@@ -1,5 +1,5 @@
-"use strict";
+'use strict';
 const hello = "hello world";
 console.log(hello);
 
-if (hello) console.log("hi");
+if(hello) console.log('hi');
