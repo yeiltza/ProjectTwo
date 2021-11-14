@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
+    <metaname="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
     <title>Conference Room</title>
     <link rel="stylesheet" href="stylesheets/conference.css" />
   </head>
@@ -17,19 +14,19 @@
     <div class="video-container">
       <div class="video-icon-container">
         <label for="" class="name"> You </label>
-        <video src="self"></video>
+        <video id="self" autoplay muted playsinline></video>
       </div>
       <div class="video-icon-container">
         <label for="" class="name"> John</label>
-        <video src="peer"></video>
+        <video class="peer" autoplay muted playsinline></video>
       </div>
       <div class="video-icon-container">
         <label for="" class="name"> Julie</label>
-        <video src="peer"></video>
+        <video class="peer" autoplay muted playsinline></video>
       </div>
       <div class="video-icon-container">
         <label for="" class="name"> Jessica</label>
-        <video src="peer"></video>
+        <video class="peer" autoplay muted playsinline></video>
       </div>
       <button class="leave-room">Leave Room</button>
     </div>
@@ -49,5 +46,6 @@
         <button class="start-listening">Start a listening session ➡</button>
       </form>
     </div>
+    <script src="javascripts/webrtc.js"></script>
   </body>
 </html>
