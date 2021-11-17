@@ -7,3 +7,29 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* stylelint-enable */
 
 /* Begin site styles below */
+button{
+   color: white;
+   background-color: green;
+   border-radius: 10px;
+}
+
+p{
+   background-color: yellow;
+   color: black;
+}
+
+h1{
+   color: black;
+   background-color: yellow;
+}
+
+nav{
+   color: black;
+   background-color: yellow;
+}
+
+ul{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
