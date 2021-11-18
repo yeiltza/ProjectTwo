@@ -12,7 +12,10 @@
  };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63a7cff4579d4a527d28a165a6928845499b1adf
  const $peers = {};
  /**
   *  Signaling-Channel Setup
@@ -415,16 +418,24 @@ function resetObjectKeys(obj) {
   }
 }
 
+<<<<<<< HEAD
 if(hello) console.log('hi');
 =======
 if (hello) console.log("hi");
 >>>>>>> 2f088744830613bb82bb63b8e0a844e131e34c84
+=======
+if (hello) console.log('hi');
+>>>>>>> 63a7cff4579d4a527d28a165a6928845499b1adf
 
 function homebFunc() {
   window.location.href="";
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> 2f088744830613bb82bb63b8e0a844e131e34c84
+=======
+
+>>>>>>> 63a7cff4579d4a527d28a165a6928845499b1adf
