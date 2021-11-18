@@ -18,8 +18,10 @@ async function requestUserMedia(constraints) {
 
 const namespace = prepareNamespace(window.location.hash, true);
 
+const sc = io();
 const sc = io.connect("/" + namespace, { autoConnect: false });
 
+// Utility Functions for SocketIO
 function prepareNamespace(hash, set_location) {
   let ns = hash.replace(/^#/, ""); // remove # from the hash
   if (/^[a-z]{3}-[a-z]{4}-[a-z]{3}$/.test(ns)) {
