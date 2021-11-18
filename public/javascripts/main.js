@@ -60,3 +60,25 @@
       leaveCall();
     }
   }
+  function joinCall() {
+    sc.open();
+  }
+
+  function leaveCall() {
+    sc.close();
+    for (let id in $peers) {
+      resetCall(id, true);
+    }
+  }
+
+  function handleUsernameForm(event) {
+    event.preventDefault();
+    const form = event.target;
+    const username = form.querySelector('#username-input').value;
+    const figcaption = document.querySelector('#self figcaption');
+    figcaption.innerText = username;
+    $self.username = username;
+    for (let id in $peers) {
+      shareUsername(username, id);
+    }
+  }
