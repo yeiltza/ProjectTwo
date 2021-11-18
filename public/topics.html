@@ -10,51 +10,75 @@
     <link rel="stylesheet" href="stylesheets/reset.css" />
     <title>Topic Area</title>
     <link rel="stylesheet" href="stylesheets/topics.css" />
+    <link rel="stylesheet" href="stylesheets/sass.css" />
   </head>
   <body>
-    <main class="choose-topics-container">
-      <h2 class="title">Popular Topics</h2>
-      <button class="view-all">View All</button>
+    <nav class="nav">
+      <img src="images/svg/Topick-Logo.svg" alt="Logo" class="logo clickable" />
 
-      <div class="room">
-        <h3 class="topic-title">Marvel Movies</h3>
-        <p class="people-count">People: 6/7</p>
-        <button class="join-room">Join Room</button>
+      <ul class="navbar">
+        <li><a class="navbar-item" href="/">Home</a></li>
+        <li><a class="navbar-item" href="/topics">Browse Topics</a></li>
+        <li><a class="navbar-item" href="/room">Chat Room</a></li>
+        <li><a class="navbar-item" href="/spotify">Spotify</a></li>
+      </ul>
+
+      <div class="nav-button-container">
+        <a href="/" class="nav-button">Login</a>
+        <a href="/topics" class="start-button">Start chatting!</a>
       </div>
-      <div class="room">
-        <h3 class="topic-title">Marvel Movies</h3>
-        <p class="people-count">People: 6/7</p>
-        <button class="join-room">Join Room</button>
+    </nav>
+
+    <main class="choose-topics-container">
+      <div class="title-wrapper">
+        <h2 class="title">Popular Topics</h2>
+        <button class="view-all">View All ➡</button>
       </div>
-      <div class="room">
-        <h3 class="topic-title">Marvel Movies</h3>
-        <p class="people-count">People: 6/7</p>
-        <button class="join-room">Join Room</button>
-      </div>
-      <div class="room">
-        <h3 class="topic-title">Marvel Movies</h3>
-        <p class="people-count">People: 6/7</p>
-        <button class="join-room">Join Room</button>
+
+      <div class="topics-wrapper">
+        <div class="room">
+          <h3 class="topic-title">Marvel Movies</h3>
+          <p class="people-count">People: 6/7</p>
+          <button class="join-room">Join Room</button>
+        </div>
+        <div class="room">
+          <h3 class="topic-title">Marvel Movies</h3>
+          <p class="people-count">People: 6/7</p>
+          <button class="join-room">Join Room</button>
+        </div>
+        <div class="room">
+          <h3 class="topic-title">Marvel Movies</h3>
+          <p class="people-count">People: 6/7</p>
+          <button class="join-room">Join Room</button>
+        </div>
+        <div class="room">
+          <h3 class="topic-title">Marvel Movies</h3>
+          <p class="people-count">People: 6/7</p>
+          <button class="join-room">Join Room</button>
+        </div>
       </div>
     </main>
 
-    <section class="create-topic">
-      <h2 class="create-topic__title">Create a Topic</h2>
-      <form action="#" class="enter-topic">
-        <input type="text" class="topic-input" placeholder="Cats vs Dogs" />
-        <button type="submit" class="action-room">Create Room</button>
-      </form>
-    </section>
-    <section class="join-topic">
-      <h2 class="join-topic__title">Join a Topic</h2>
-      <form action="#" class="enter-topic">
-        <input type="text" class="topic-input" placeholder="123456" />
-        <button type="submit" class="action-room">Join Room</button>
-      </form>
-    </section>
+    <div class="inputs-wrapper">
+      <section class="create-topic">
+        <h2 class="create-topic__title">Create a Topic</h2>
+        <form action="#" class="enter-topic">
+          <input type="text" class="topic-input" placeholder="Cats vs Dogs" />
+          <button type="submit" class="action-room">Create Room</button>
+        </form>
+      </section>
+      <section class="join-topic">
+        <h2 class="join-topic__title">Join a Topic</h2>
+        <form action="#" class="enter-topic">
+          <input type="text" class="topic-input" placeholder="123456" />
+          <button type="submit" class="action-room">Join Room</button>
+        </form>
+      </section>
+    </div>
     <section class="idk-topic">
       <h2 class="idk-title">I don't know what to talk about...</h2>
-      <button type="submit" class="idk">Join a random topic</button>
+      <button type="submit" class="idk-button">Join a random topic</button>
     </section>
+    <script src="javascripts/main.js"></script>
   </body>
 </html>
