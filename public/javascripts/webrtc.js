@@ -18,7 +18,6 @@ async function requestUserMedia(constraints) {
 
 const namespace = prepareNamespace(window.location.hash, true);
 
-const sc = io();
 const sc = io.connect("/" + namespace, { autoConnect: false });
 
 // Utility Functions for SocketIO
