@@ -1,5 +1,13 @@
 # ProjectTwo
-WebRTC application for ITMD 469 
+[![WebRTC Nodejs CI](https://github.com/YourEpicness/ProjectTwo/actions/workflows/test.yml/badge.svg)](https://github.com/YourEpicness/ProjectTwo/actions/workflows/test.yml)
+
+WebRTC application for ITMD 469. 
+
+## Feature List
+- Video chat
+- Audio chat
+- Text chat
+- Listen to music on spotify
 
 ## Running the application
 To run the application:
@@ -26,3 +34,4 @@ Please ensure that you are making frequest and small commits.
 When you're ready to merge, you can:
 - Go to your forked repository on Github and look where it says `This branch is x commits ahead of WebRTC-JRTY:main.` 
 - On the right there should be a button `Contribute` that you can click and `Open pull request`
+

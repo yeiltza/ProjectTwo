@@ -1,0 +1,55 @@
+# name: WebRTC Nodejs CI
+# on: ["push", pull_request]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     env:
+#         DOCKER_USER: ${{secrets.DOCKER_USER}}
+#         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+#     strategy:
+#       matrix:
+#         node-version: [16.x, 17.x]
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#         cache: 'npm'
+#     - name: Continous integration with npm to extract packages
+#       run: npm ci
+#     - name: Build the node application
+#       run: npm run build --if-present
+#     - name: Lint the application with eslint script
+#       run: npm run lint
+#     - name: Test the application
+#       run: npm run test:ci
+#     - name: Login to docker
+#       run: echo ${{env.DOCKER_PASSWORD}} | docker login --username ${{env.DOCKER_USER}} --password-stdin
+#     - name: Build the docker image
+#       run: docker build . --file Dockerfile --tag jbdiop/webrtc-app:$(date +%s) --tag jbdiop/webrtc-app:latest
+#     - name: Push image to dockerhub
+#       run: docker push jbdiop/webrtc-app
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Create ZIP for deployment to S3
+#         run: zip -r deploy_package-${{ github.sha }}.zip .
+#       - name: Configure AWS Credentials
+#         uses: aws-actions/configure-aws-credentials@v1
+#         with:
+#           aws-region: "us-east-2"
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#       - name: Upload application to S3 bucket
+#         run: aws s3 cp deploy_package-${{ github.sha }}.zip s3://jbdiop-ci-deploy/app/
+#       - name: Create new ElasticBeanstalk Application Version
+#         run: |
+#           aws elasticbeanstalk create-application-version \
+#           --application-name webrtc-app \
+#           --source-bundle S3Bucket="jbdiop-ci-deploy",S3Key="app/deploy_package-${{ github.sha }}.zip" \
+#           --version-label "ver-${{ github.sha }}" \
+#           --description "commit-sha-${{ github.sha }}"
+#       - name: Deploy new ElasticBeanstalk Application Version
+#         run: aws elasticbeanstalk update-environment --environment-name Webrtcapp-env --version-label "ver-${{ github.sha }}"

@@ -2,18 +2,48 @@
   "name": "projecttwo",
   "version": "0.0.0",
   "private": true,
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/cypress/"
+    ]
+  },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "cypress": "cypress open",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
+    "lint": "eslint --fix public/"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "socket.io": "^4.3.1"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.10.1",
+    "@testing-library/jest-dom": "^5.14.1",
     "concurrently": "^6.3.0",
+    "cypress": "^8.6.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-testing-library": "^4.12.4",
+    "jest": "^27.3.1",
     "nodemon": "^2.0.14"
-  }
+  },
+  "description": "[![WebRTC Nodejs CI](https://github.com/YourEpicness/ProjectTwo/actions/workflows/test.yml/badge.svg)](https://github.com/YourEpicness/ProjectTwo/actions/workflows/test.yml)",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeiltza/ProjectTwo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeiltza/ProjectTwo/issues"
+  },
+  "homepage": "https://github.com/yeiltza/ProjectTwo#readme"
 }
