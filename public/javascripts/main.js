@@ -137,3 +137,39 @@
     const peer = $peers[id];
     const udc = peer.connection.createDataChannel(`username-${username}`);
   }
+
+  /**
+ *  Call Features & Reset Functions
+ */
+
+function initializeSelfAndPeerById(id, politeness) {
+  $self[id] = {
+    isPolite: politeness,
+    isMakingOffer: false,
+    isIgnoringOffer: false,
+    isSettingRemoteAnswerPending: false
+  };
+  $peers[id] = {
+    connection: new RTCPeerConnection($self.rtcConfig)
+  }
+}
+
+function establishCallFeatures(id) {
+  registerRtcCallbacks(id);
+  addStreamingMedia(id, $self.stream);
+  if ($self.username) {
+    shareUsername($self.username, id);
+  }
+}
+
+function resetCall(id, disconnect) {
+  const peer = $peers[id];
+  const videoSelector = `#peer-${id}`;
+  displayStream(videoSelector, null);
+  peer.connection.close();
+  if (disconnect) {
+    document.querySelector(videoSelector).remove();
+    delete $self[id];
+    delete $peers[id];
+  }
+}
