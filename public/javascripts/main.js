@@ -13,9 +13,12 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 63a7cff4579d4a527d28a165a6928845499b1adf
+=======
+>>>>>>> b0b39697f400e078f3540ae3bb125ce18f50af59
  const $peers = {};
  /**
   *  Signaling-Channel Setup
@@ -419,6 +422,7 @@ function resetObjectKeys(obj) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if(hello) console.log('hi');
 =======
 if (hello) console.log("hi");
@@ -426,6 +430,9 @@ if (hello) console.log("hi");
 =======
 if (hello) console.log('hi');
 >>>>>>> 63a7cff4579d4a527d28a165a6928845499b1adf
+=======
+if (hello) console.log('hi');
+>>>>>>> b0b39697f400e078f3540ae3bb125ce18f50af59
 
 function homebFunc() {
   window.location.href="";
@@ -435,7 +442,10 @@ function homebFunc() {
 =======
 
 
+<<<<<<< HEAD
 >>>>>>> 2f088744830613bb82bb63b8e0a844e131e34c84
 =======
 
 >>>>>>> 63a7cff4579d4a527d28a165a6928845499b1adf
+=======
+>>>>>>> b0b39697f400e078f3540ae3bb125ce18f50af59
