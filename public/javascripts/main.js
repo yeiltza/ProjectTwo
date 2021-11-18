@@ -7,3 +7,7 @@ logo.addEventListener("click", goHome);
 function goHome() {
   window.location.href = "/";
 }
+
+function homebFunc() {
+  window.location.href = "";
+}
