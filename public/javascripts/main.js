@@ -11,6 +11,7 @@
    mediaConstraints: { audio: false, video: true }
  };
 
+<<<<<<< HEAD
  const $peers = {};
  /**
   *  Signaling-Channel Setup
@@ -412,3 +413,12 @@ function resetObjectKeys(obj) {
     delete obj[key];
   }
 }
+=======
+
+if(hello) console.log('hi');
+
+function homebFunc() {
+  window.location.href="";
+}
+
+>>>>>>> 5ad8c61b218d47841fda7b592d93e205c1291cc7
