@@ -1,5 +1,6 @@
 "use strict";
 
+// Self and Peer Objects
 const $self = {
   constraints: {
     audio: false,
