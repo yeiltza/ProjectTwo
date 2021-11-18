@@ -82,3 +82,58 @@
       shareUsername(username, id);
     }
   }
+  /**
+   *  User-Media and Data-Channel Functions
+   */
+
+  async function requestUserMedia(media_constraints) {
+    $self.stream = new MediaStream();
+    $self.media = await navigator.mediaDevices
+      .getUserMedia(media_constraints);
+    $self.stream.addTrack($self.media.getTracks()[0]);
+    displayStream('#self', $self.stream);
+  }
+
+  function createVideoElement(id) {
+    const figure = document.createElement('figure');
+    const figcaption = document.createElement('figcaption');
+    const video = document.createElement('video');
+    const video_attrs = {
+      'autoplay': '',
+      'playsinline': '',
+      'poster': 'img/placeholder.png'
+    };
+    figure.id = `peer-${id}`;
+    figcaption.innerText = id;
+    for (let attr in video_attrs) {
+      video.setAttribute(attr, video_attrs[attr]);
+    }
+    figure.appendChild(video);
+    figure.appendChild(figcaption);
+    return figure;
+  }
+
+  function displayStream(selector, stream) {
+    let video_element = document.querySelector(selector);
+    if (!video_element) {
+      let id = selector.split('#peer-')[1]; // #peer-abc123
+      video_element = createVideoElement(id);
+    }
+    let video = video_element.querySelector('video');
+    video.srcObject = stream;
+    document.querySelector('#videos').appendChild(video_element);
+  }
+
+  function addStreamingMedia(id, stream) {
+    const peer = $peers[id];
+    if (stream) {
+      for (let track of stream.getTracks()) {
+        peer.connection.addTrack(track, stream);
+      }
+    }
+  }
+
+  function shareUsername(username, id) {
+    const peer = $peers[id];
+    const udc = peer.connection.createDataChannel(`username-${username}`);
+  }
