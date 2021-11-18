@@ -12,3 +12,12 @@
  };
 
  const $peers = {};
+ /**
+  *  Signaling-Channel Setup
+  */
+
+ const namespace = prepareNamespace(window.location.hash, true);
+
+ const sc = io.connect('/' + namespace, { autoConnect: false });
+
+ registerScCallbacks();
