@@ -36,6 +36,7 @@ const button = document.querySelector(".call-button");
 
 button.addEventListener("click", handleButton);
 
+document.querySelector(".room-number").innerText = `#${namespace}`;
 function joinCall() {
   sc.open();
   button.classList.add("leave");
