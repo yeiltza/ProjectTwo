@@ -11,6 +11,7 @@
    mediaConstraints: { audio: false, video: true }
  };
 
+<<<<<<< HEAD
 
  const $peers = {};
  /**
@@ -415,7 +416,15 @@ function resetObjectKeys(obj) {
 }
 
 if(hello) console.log('hi');
+=======
+if (hello) console.log("hi");
+>>>>>>> 2f088744830613bb82bb63b8e0a844e131e34c84
 
 function homebFunc() {
   window.location.href="";
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2f088744830613bb82bb63b8e0a844e131e34c84
