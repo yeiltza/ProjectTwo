@@ -418,4 +418,3 @@ if (hello) console.log('hi');
 function homebFunc() {
   window.location.href="";
 }
-
