@@ -11,3 +11,9 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 * {
   background-color: #f9c74f;
 }
+
+
+h2, h3 {
+ font-size: 2em;
+ margin-bottom: 10px;
+}
