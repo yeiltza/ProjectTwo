@@ -65,12 +65,14 @@
   --color-darkred: #A61B1D;
   --color-green: #107556;
   --color-darkgreen: #094130;
-  --border-default: 2px solid black; }
+  --border-default: 1px solid black; }
 
 html {
   font-family: Lora, sans-serif;
   font-size: 62.5%;
-  line-height: 26px;
+  line-height: 26px; }
+
+.roomhtml {
   background-color: var(--bg-color); }
 
 button {
@@ -79,7 +81,10 @@ button {
   background-color: black;
   color: white;
   font-weight: bold;
-  padding: 2rem 3rem; }
+  padding: 2rem 3rem;
+  cursor: pointer; }
+  button:hover {
+    filter: brightness(1.5); }
 
 .layout {
   margin: 4rem;
@@ -140,17 +145,18 @@ button {
   .video-container-icon {
     position: relative;
     border: black 2px solid;
-    border-radius: 2rem; }
+    border-radius: 2rem;
+    overflow: hidden; }
     .video-container-icon .name {
       background-color: black;
       padding: 1rem 2rem;
       position: absolute;
-      bottom: 1rem;
+      bottom: 4rem;
       left: 1rem; }
     .video-container-icon #self {
-      width: 200px; }
+      width: 100%; }
     .video-container-icon .peer {
-      width: 200px; }
+      width: 100%; }
 
 .chat-container {
   display: flex;
@@ -237,3 +243,203 @@ button {
     @media (min-width: 1280px) {
       .button-container .start-listening {
         grid-area: button; } }
+
+.clickable {
+  cursor: pointer; }
+
+.nav {
+  background-color: white;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  height: 5rem;
+  border-bottom: var(--border-default); }
+  .nav .logo {
+    width: 10rem;
+    height: 5rem;
+    align-self: center; }
+  .nav .navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 50%;
+    gap: 5rem; }
+    .nav .navbar .navbar-item {
+      font-weight: var(--semibold-font);
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: black; }
+      .nav .navbar .navbar-item:hover {
+        text-decoration: underline;
+        color: red; }
+  .nav .nav-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    text-decoration: none; }
+    .nav .nav-button-container .nav-button {
+      margin: 0 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid black;
+      border-radius: 2rem;
+      color: black;
+      transition: all 0.5s ease-out; }
+      .nav .nav-button-container .nav-button:hover {
+        background-color: black;
+        color: white; }
+    .nav .nav-button-container .start-button {
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      background-color: var(--color-green);
+      padding: 0.5rem 0.75rem;
+      border-radius: 2rem; }
+      .nav .nav-button-container .start-button:hover {
+        filter: brightness(1.5); }
+
+.hero {
+  font-family: Lora;
+  padding: 5rem 10rem;
+  height: 75vh;
+  position: relative; }
+  .hero-header {
+    font-size: 6.4rem;
+    line-height: 8.2rem;
+    font-weight: bold;
+    width: 70%;
+    margin-bottom: 2rem;
+    position: relative; }
+    .hero-header .highlight {
+      display: inline-block;
+      line-height: 0rem;
+      padding-bottom: 2.75rem;
+      background-color: #43AA8B; }
+  .hero .subheader {
+    font-family: Nunito;
+    font-size: 2.4rem;
+    font-weight: var(--semibold-font);
+    width: 60%;
+    margin: 3rem 0; }
+  .hero .hero-button {
+    background-color: var(--color-green);
+    border-radius: 2rem;
+    padding: 1.5rem 3.25rem;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none; }
+    .hero .hero-button:hover {
+      filter: brightness(1.5); }
+  .hero .main-img {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    z-index: -1; }
+  .hero .second-img {
+    position: absolute;
+    right: 16%;
+    top: 5%;
+    z-index: -1; }
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  place-content: center;
+  font-weight: var(--semibold-font); }
+
+.choose-topics-container {
+  font-family: Lora;
+  padding: 3.5rem; }
+  .choose-topics-container .title-wrapper {
+    display: flex; }
+    .choose-topics-container .title-wrapper .title {
+      font-weight: bold;
+      font-size: 3.6rem; }
+    .choose-topics-container .title-wrapper .view-all {
+      padding: 0.5rem;
+      background-color: inherit;
+      font-size: 1.8rem;
+      border: var(--border-default);
+      border-radius: 5px;
+      color: black;
+      cursor: pointer;
+      margin-left: 3rem;
+      transition: all 0.25s ease-in; }
+      .choose-topics-container .title-wrapper .view-all:hover {
+        color: white;
+        background-color: black; }
+
+.topics-wrapper {
+  font-family: Lora;
+  display: flex;
+  color: white; }
+  .topics-wrapper .room {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-darkgreen);
+    border-radius: 1rem;
+    margin-right: 3rem;
+    padding: 1.5rem; }
+    .topics-wrapper .room .topic-title {
+      font-size: 2.4rem;
+      font-weight: bold; }
+    .topics-wrapper .room .people-count {
+      font-size: 1.8rem;
+      font-weight: var(--medium-font); }
+    .topics-wrapper .room .join-room {
+      color: black;
+      background-color: white;
+      border-radius: 1rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      font-size: 1.8rem;
+      place-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease-out; }
+      .topics-wrapper .room .join-room:hover {
+        background-color: black;
+        color: white; }
+
+.inputs-wrapper {
+  display: flex;
+  padding: 3.5rem; }
+  .inputs-wrapper h2 {
+    font-weight: bold;
+    font-size: 3.6rem; }
+  .inputs-wrapper .enter-topic {
+    margin: 3.5rem 0;
+    margin-right: 7.5rem; }
+    .inputs-wrapper .enter-topic .topic-input {
+      border-radius: 5px;
+      width: 50%; }
+    .inputs-wrapper .enter-topic .action-room {
+      color: white;
+      font-weight: var(--medium-font);
+      background-color: var(--color-darkgreen);
+      padding: 0.75rem 1rem;
+      width: 40%;
+      font-size: 1.6rem;
+      margin-left: 1rem;
+      cursor: pointer; }
+      .inputs-wrapper .enter-topic .action-room:hover {
+        filter: brightness(1.5); }
+
+.idk-topic {
+  padding: 3.5rem; }
+  .idk-topic h2 {
+    font-weight: bold;
+    font-size: 3.6rem; }
+  .idk-topic .idk-button {
+    margin-top: 2rem;
+    color: white;
+    font-weight: bold;
+    background-color: var(--color-darkgreen);
+    padding: 2rem 3rem;
+    font-size: 1.6rem;
+    cursor: pointer; }
+    .idk-topic .idk-button:hover {
+      filter: brightness(1.5); }

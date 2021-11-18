@@ -8,11 +8,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 
 /* Begin site styles below */
-=======
-
-/* Begin site styles below */
-
-body{
+ 
+/* body{
    background-color: white;
    flex-direction: column;
 }
@@ -64,4 +61,4 @@ li a{
 
 li a:hover{
    background-color: #d3d3d3;
-}
+} */
