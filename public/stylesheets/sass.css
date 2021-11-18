@@ -86,6 +86,12 @@ button {
   button:hover {
     filter: brightness(1.5); }
 
+.join {
+  background-color: var(--color-green); }
+
+.leave {
+  background-color: var(--color-darkred); }
+
 .layout {
   margin: 4rem;
   display: flex;
@@ -228,12 +234,11 @@ button {
       display: flex;
       justify-content: space-between;
       align-items: center; } }
-  .button-container .leave-room {
+  .button-container .call-button {
     width: 35rem;
-    margin: 5rem 0;
-    background-color: var(--color-darkred); }
+    margin: 5rem 0; }
     @media (min-width: 1280px) {
-      .button-container .leave-room {
+      .button-container .call-button {
         grid-area: button;
         width: 20%; } }
   .button-container .start-listening {
