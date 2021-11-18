@@ -16,9 +16,38 @@ async function requestUserMedia(constraints) {
   video.srcObject = $self.stream;
 }
 
+// Socket IO
 const namespace = prepareNamespace(window.location.hash, true);
 
 const sc = io.connect("/" + namespace, { autoConnect: false });
+
+// DOM Events
+function handleButton(e) {
+  const button = e.target;
+  if (button.innerText === "Join Room") {
+    joinCall();
+  } else {
+    leaveCall();
+  }
+}
+
+// DOM Elements
+const button = document.querySelector(".call-button");
+
+button.addEventListener("click", handleButton);
+
+function joinCall() {
+  sc.open();
+  button.classList.add("leave");
+  button.innerText = "Leave Room";
+}
+
+function leaveCall() {
+  button.classList.remove("leave");
+  button.innerText = "Join Room";
+  sc.close();
+}
+// WebRTC Events
 
 // Utility Functions for SocketIO
 function prepareNamespace(hash, set_location) {

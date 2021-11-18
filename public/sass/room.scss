@@ -32,6 +32,14 @@ button {
     }
 }
 
+.join {
+    background-color: var(--color-green);
+}
+
+.leave {
+    background-color: var(--color-darkred);
+}
+
 .layout {
     margin: 4rem;
     display: flex;
@@ -220,10 +228,9 @@ button {
         align-items: center;
     }
 
-    .leave-room {
+    .call-button {
         width: 35rem;
         margin: 5rem 0;
-        background-color: var(--color-darkred);
     
         @media (min-width: 1280px) {
             grid-area: button;
