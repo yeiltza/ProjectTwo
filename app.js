@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const io = require('socket.io')();
+
 //Add conts variable for Spotify router
 const spotifyRouter = require("./routes/spotify.router");
 
@@ -14,8 +16,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/spotify", spotifyRouter);
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/', indexRouter);
+//app.use('/users', usersRouter);
 
 const namespaces = io.of(/^\/[a-z]{3}\-[a-z]{4}\-[a-z]{3}$/)
 
