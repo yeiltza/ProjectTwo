@@ -99,7 +99,7 @@ button {
   @media (min-width: 1280px) {
     .layout {
       display: grid;
-      grid-template-areas: "room ." "title ." "subtitle chat" "video chat" "button button";
+      grid-template-areas: "room ." "title ." "subtitle chat" "video chat" "button button";
       grid-template-columns: 60% 40%;
       grid-template-rows: 5rem 5rem 4.5rem 2fr 4rem;
       gap: 2rem;
