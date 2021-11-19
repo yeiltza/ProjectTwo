@@ -35,6 +35,8 @@ const server = https.createServer(config, app);
  * Listen on provided port, on all network interfaces.
  */
 
+// Attach socketIO server
+io.attach(server);
 server.listen(port, () => {
   console.log(`Listening on https://localhost:${port}`);
 });

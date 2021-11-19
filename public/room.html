@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <metaname
-      ="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,
+    shrink-to-fit=no"
     />
     <title>Conference Room</title>
     <link rel="stylesheet" href="stylesheets/reset.css" />
     <link rel="stylesheet" href="stylesheets/sass.css" />
   </head>
-  <body>
+  <body class="roomhtml">
     <section class="layout">
       <span class="room">Room: <span class="room-number">323131</span></span>
       <h1 class="header">Topic: <span>Marvel vs DC Movies</span></h1>
@@ -78,10 +79,12 @@
         </form>
       </div>
       <div class="button-container">
-        <button class="leave-room">Leave Room</button>
+        <button class="call-button join">Join Room</button>
         <button class="start-listening">Start a listening session ➡</button>
       </div>
     </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
     <script src="javascripts/webrtc.js"></script>
   </body>
 </html>

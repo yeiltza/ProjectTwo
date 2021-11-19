@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use strict';
 
 /**
@@ -429,4 +430,18 @@ function resetObjectKeys(obj) {
   for (let key of Object.keys(obj)) {
     delete obj[key];
   }
+=======
+"use strict";
+
+// DOM Stuff
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", goHome);
+
+function goHome() {
+  window.location.href = "/";
+}
+
+function homebFunc() {
+  window.location.href = "";
+>>>>>>> df55bf5770f935b4d798f139973558c54a0164aa
 }
