@@ -293,10 +293,11 @@ function handleChatForm(e) {
   const input = form.querySelector(".enter-message");
   const message = input.value;
 
-  appendMessage("self", message);
+  appendMessage("self", `${$self.username}:${message}`);
 
-  for (let peer in $peers) {
-    peer.chatChannel.send(message);
+  for (let peerId in $peers) {
+    console.log("Chat peers", peerId);
+    $peers[peerId].chatChannel.send(`${$self.username}: ${message}`);
   }
 
   // Reset chat form when submit
